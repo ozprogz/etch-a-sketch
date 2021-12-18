@@ -1,0 +1,21 @@
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+h1{
+    text-align: center;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(16,20px);
+    grid-template-rows: repeat(16,20px);
+}
+
+.grid-element{
+    background-color: black;
+}
+
+.grid-element:hover{
+        background-color: blueviolet;
+}
