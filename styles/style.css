@@ -12,8 +12,8 @@ h1{
     display: grid;
     grid-template-columns: repeat(16,auto);
     grid-template-rows: repeat(16,auto);
-    width: 600px;
-    height:600px;
+    width: 550px;
+    height:550px;
     border:solid; 
     border-width: 4px;
     
@@ -26,5 +26,9 @@ h1{
 
 .change-color{
     background-color: #000000;
+}
+
+.rgb{
+    background-color: white;
 }
 

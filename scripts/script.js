@@ -1,3 +1,4 @@
+let black = true; 
 const grid = document.querySelector(".container");
 const makeGrid = (size)=>{
     
@@ -16,7 +17,7 @@ const gridBlocks = document.querySelectorAll(".grid-element");
 gridBlocks.forEach( item =>{ item.addEventListener("mouseover", ()=>{
         item.classList.add("change-color");
     });
-});
+    });
 
 const clearButton = document.querySelector(".clear");
 clearButton.addEventListener("click", ()=>{
@@ -38,11 +39,48 @@ clearButton.addEventListener("click", ()=>{
     grid.style.gridTemplateRows = `repeat(${entry}, auto)`;
     
     let gridBlock = document.querySelectorAll(".grid-element");
-    gridBlock.forEach( item =>{ item.addEventListener("mouseover", ()=>{
+    if(black) 
+    {   gridBlock.forEach( item =>{ item.addEventListener("mouseover", ()=>{
         item.classList.add("change-color");
     });
 });
-  
+}
+    else {
+        gridBlock.forEach( item =>{ item.addEventListener("mouseover", ()=>{
+            generateRandomRgbValue(item);
+        });
+    });
+    }       
 });
+
+const rgbButton = document.querySelector(".rgb-button");
+rgbButton.addEventListener("click", ()=>{
+    black = false;
+    const test = document.querySelectorAll(".grid-element");
+    test.forEach( item =>{ item.addEventListener("mouseover", ()=>{
+        generateRandomRgbValue(item);
+
+    
+
+})})})
+
+const blackButton = document.querySelector(".black-button");
+blackButton.addEventListener("click", ()=>{
+    black = true;
+    const test = document.querySelectorAll(".grid-element");
+    test.forEach( item =>{ item.addEventListener("mouseover", ()=>{
+        item.style.backgroundColor = "black";
+    
+
+})})})
+
+
+function generateRandomRgbValue(item){
+    let max =256;
+    let r = Math.floor(Math.random() * max);
+    let g = Math.floor(Math.random() * max);
+    let b = Math.floor(Math.random() * max);
+    item.style.backgroundColor =`rgb(${r},${g},${b})`;
+}
 
 
