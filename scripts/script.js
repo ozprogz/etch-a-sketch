@@ -27,9 +27,8 @@ clearButton.addEventListener("click", ()=>{
     })
     let entry;
     while(1){
-        entry = prompt("What size should the grid have?");
-        if(parseInt(entry)<=100) break;
-        
+        entry = parseInt(prompt("What size should the grid have? Enter a number between 1-100"));
+        if(entry!=0 &&(entry <=100)) break;
     }
     
     grid.innerHTML="";
@@ -44,8 +43,6 @@ clearButton.addEventListener("click", ()=>{
     });
 });
   
-
-
 });
 
 
